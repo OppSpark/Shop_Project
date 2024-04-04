@@ -17,6 +17,7 @@
             <h4 th:text="${list.title}"></h4>
             <a th:href="@{'/detail/'+ ${list.id} }">링크</a>
             <p th:text="${list.price}"></p>
+            <a th:href="@{'/edit/' + ${list.id}}">수정</a>
         </div>
     </div>
 </body>
