@@ -16,7 +16,6 @@ public class ItemController {
 
     private final ItemRepository itemRepository;
     private final ItemService itemService;
-    private ItemRepository itemRepository1;
 
     @GetMapping("/list")
     String list(Model model){
@@ -70,7 +69,6 @@ public class ItemController {
         System.out.println("id = " + id);
         System.out.println("title = " + title);
         System.out.println("price = " + price);
-
 
         itemRepository.save(item);
 
