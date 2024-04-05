@@ -61,7 +61,7 @@ public class ItemController {
             Integer price,
             Long id
     ){
-        itemService.editItem(title,price,id);
+        itemService.editItem(title, price, id);
 
         return "redirect:/detail/" + id;
     }

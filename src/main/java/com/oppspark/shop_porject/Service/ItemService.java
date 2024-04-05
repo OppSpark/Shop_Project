@@ -15,14 +15,11 @@ public class ItemService {
 
     private final ItemRepository itemRepository;
 
-    public void saveItem(
-            String title,
-            Integer price
-    ){
+    public void saveItem(String title, Integer price){
         if(title.length() > 100 || title.isEmpty())
             throw new IllegalArgumentException("제목이 비어있거나 100자 이하로 입력해주세요.");
-        if(price < 0)
-            throw new IllegalArgumentException("가격은 0원 이상으로 입력해주세요.");
+        if(price < 0 || price > 2000000000)
+            throw new IllegalArgumentException("가격은 0원 이상 2,000,000,000 이하로 입력해주세요.");
 
         Item item = new Item();
         item.setTitle(title);
@@ -38,15 +35,16 @@ public class ItemService {
 
     public void updateItem(Model model, Long id) {
         Optional<Item> result = itemRepository.findById(id);
-        itemRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 아이템이 없습니다."));
+        itemRepository.findById(id).orElseThrow(() ->
+                new IllegalArgumentException("해당 아이템이 없습니다."));
         model.addAttribute("item", result.get());
     }
 
     public void editItem(String title, Integer price, Long id){
         if(title.length() > 100 || title.isEmpty())
             throw new IllegalArgumentException("제목이 비어있거나 100자 이하로 입력해주세요.");
-        if(price < 0)
-            throw new IllegalArgumentException("가격은 0원 이상으로 입력해주세요.");
+        if(price < 0 || price > 2000000000)
+            throw new IllegalArgumentException("가격은 0원 이상 2,000,000,000 이하로 입력해주세요.");
 
         Item item = new Item();
         item.setTitle(title);
