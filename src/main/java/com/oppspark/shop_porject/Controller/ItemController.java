@@ -55,24 +55,15 @@ public class ItemController {
         return "redirect:/list";
     }
 
-    @PutMapping("/api/edit/{id}")
+    @PostMapping("/api/edit")
     String editItem(
             String title,
             Integer price,
-            @PathVariable Long id
+            Long id
     ){
-        Item item = new Item();
-        item.setTitle(title);
-        item.setPrice(price);
-        item.setId(id);
-        
-        System.out.println("id = " + id);
-        System.out.println("title = " + title);
-        System.out.println("price = " + price);
+        itemService.editItem(title,price,id);
 
-        itemRepository.save(item);
-
-        return "redirect:/list";
+        return "redirect:/detail/" + id;
     }
 }
 

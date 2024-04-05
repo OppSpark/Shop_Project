@@ -19,6 +19,11 @@ public class ItemService {
             String title,
             Integer price
     ){
+        if(title.length() > 100 || title.isEmpty())
+            throw new IllegalArgumentException("제목이 비어있거나 100자 이하로 입력해주세요.");
+        if(price < 0)
+            throw new IllegalArgumentException("가격은 0원 이상으로 입력해주세요.");
+
         Item item = new Item();
         item.setTitle(title);
         item.setPrice(price);
@@ -35,5 +40,20 @@ public class ItemService {
         Optional<Item> result = itemRepository.findById(id);
         itemRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 아이템이 없습니다."));
         model.addAttribute("item", result.get());
+    }
+
+    public void editItem(String title, Integer price, Long id){
+        if(title.length() > 100 || title.isEmpty())
+            throw new IllegalArgumentException("제목이 비어있거나 100자 이하로 입력해주세요.");
+        if(price < 0)
+            throw new IllegalArgumentException("가격은 0원 이상으로 입력해주세요.");
+
+        Item item = new Item();
+        item.setTitle(title);
+        item.setPrice(price);
+        item.setId(id);
+
+        itemRepository.save(item);
+
     }
 }

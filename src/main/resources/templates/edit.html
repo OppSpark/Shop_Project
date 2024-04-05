@@ -11,10 +11,10 @@
 <body>
     <div th:replace="~{nav.html}"></div>
 
-    <form action="/api/edit/" method="PUT">
+    <form action="/api/edit" method="POST">
         <input name="title" th:value="${item.title}">
         <input name="price" th:value="${item.price}">
-        <input name="id" th:value="${item.id}">
+        <input name="id" th:value="${item.id}" style="display:none">
         <button type="submit">전송</button>
     </form>
 </body>
