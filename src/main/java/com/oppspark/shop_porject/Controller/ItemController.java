@@ -51,9 +51,7 @@ public class ItemController {
 
     @PostMapping("/api/item")
     String addItem(String title, Integer price){
-
         itemService.saveItem(title, price);
-
         return "redirect:/list";
     }
 
@@ -64,16 +62,15 @@ public class ItemController {
             Long id
     ){
         itemService.editItem(title, price, id);
-
         return "redirect:/detail/" + id;
     }
 
     @DeleteMapping("/api/delete")
     String deleteItem(@RequestBody Map<String, Object> body){
-
         Long id = Long.parseLong(Objects.requireNonNull(body.get("id")).toString());
         itemService.deleteItem(id);
-
         return "redirect:/list";
     }
+
+    //테스트용 API
 }
