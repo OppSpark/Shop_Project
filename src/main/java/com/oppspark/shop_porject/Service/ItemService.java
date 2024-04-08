@@ -52,6 +52,11 @@ public class ItemService {
         item.setId(id);
 
         itemRepository.save(item);
+    }
 
+    public void deleteItem(Long id){
+        if(!itemRepository.existsById(id))
+            throw new IllegalArgumentException("해당 아이템이 없습니다.");
+        itemRepository.deleteById(id);
     }
 }

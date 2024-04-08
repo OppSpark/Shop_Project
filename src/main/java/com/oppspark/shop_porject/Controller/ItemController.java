@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 
 @Controller
@@ -65,8 +67,13 @@ public class ItemController {
 
         return "redirect:/detail/" + id;
     }
+
+    @DeleteMapping("/api/delete")
+    String deleteItem(@RequestBody Map<String, Object> body){
+
+        Long id = Long.parseLong(Objects.requireNonNull(body.get("id")).toString());
+        itemService.deleteItem(id);
+
+        return "redirect:/list";
+    }
 }
-
-
-
-
