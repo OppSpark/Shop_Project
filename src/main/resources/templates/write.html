@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/main.css" rel="stylesheet">
-    <title>물건 등록</title>
+    <title>상품 등록</title>
 </head>
 
 <body>
     <div th:replace="~{nav.html}"></div>
-
+    <pre>상품 등록 하기</pre>
     <form action="/api/item" method="POST">
+        <pre>상품명, 가격을 입력하세요</pre>
         <input name="title">
         <input name="price">
         <button type="submit">전송</button>
