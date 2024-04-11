@@ -11,8 +11,9 @@
 
 ## 개발 환경
 ---
-- OS : Ubuntu Server, Mac OS
+- OS : Ubuntu Server 22.04, Mac OS
 - IDE : IntelliJ, VSCode
+- LANGUAGE : JAVA17, HTML, CSS, JS
 - Framework : SpringBoot 3.2.4
 - Server : Oracle Cloud
 - DataBase : MySQL 8 , amazon S3
