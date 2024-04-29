@@ -1,7 +1,6 @@
-package com.oppspark.shop_porject.Entity;
+package com.oppspark.shop_project.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -11,7 +10,12 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Member {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(unique = true)
     private String username;
 
     private String password;

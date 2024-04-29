@@ -1,16 +1,18 @@
-package com.oppspark.shop_porject.Service;
+package com.oppspark.shop_project.Service;
 
-import com.oppspark.shop_porject.Entity.Member;
-import com.oppspark.shop_porject.Repository.MemberRepository;
+import com.oppspark.shop_project.Entity.Member;
+import com.oppspark.shop_project.Repository.MemberRepository;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
 public class RegisterService {
     private final MemberRepository memberRepository;
+    private final PasswordEncoder passwordEncoder;
 
     public void register (
             String username,
@@ -28,7 +30,7 @@ public class RegisterService {
         if(displayName.length() < 2 || displayName.length()>10)
             throw new IllegalArgumentException("닉네임의 길이는 2 ~ 10자리 입니다.");
 
-        String hashPW = BCrypt.hashpw(password, BCrypt.gensalt());
+        String hashPW = passwordEncoder.encode(password);
 
         //중복 검사 해봐야함
 

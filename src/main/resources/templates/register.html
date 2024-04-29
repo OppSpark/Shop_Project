@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/main.css" rel="stylesheet">
     <title>회원가입</title>
 </head>
+
 <body>
     <div th:replace="~{nav.html}"></div>
     <pre>회원가입 하기</pre>
 
     <form action="/api/register" method="POST">
-        <pre>아이디, 비밀번호,비밀번호 확인, 닉네임을 입력하세요</pre>
+        <pre>아이디, 닉네임, 비밀번호,비밀번호 확인을 입력하세요</pre>
+        <pre>ID</pre>
         <input name="username">
-        <input name="password">
-        <input name="passwordVal">
+        <pre>Nickname</pre>
         <input name="displayName">
+        <pre>Password</pre>
+        <input name="password" type="password">
+        <pre>Password 확인</pre>
+        <input name="passwordVal" type="password">
         <button type="submit">전송</button>
     </form>
 </body>
+
 </html>

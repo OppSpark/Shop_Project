@@ -1,8 +1,8 @@
-package com.oppspark.shop_porject.Controller;
+package com.oppspark.shop_project.Controller;
 
-import com.oppspark.shop_porject.Entity.Item;
-import com.oppspark.shop_porject.Repository.ItemRepository;
-import com.oppspark.shop_porject.Service.ItemService;
+import com.oppspark.shop_project.Entity.Item;
+import com.oppspark.shop_project.Repository.ItemRepository;
+import com.oppspark.shop_project.Service.ItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

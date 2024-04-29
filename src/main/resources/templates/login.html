@@ -5,18 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/main.css" rel="stylesheet">
-    <title>상품 등록</title>
+    <title>로그인</title>
 </head>
 
 <body>
     <div th:replace="~{nav.html}"></div>
-    <pre>상품 등록 하기</pre>
-    <form action="/api/item" method="POST">
-        <pre>상품명, 가격을 입력하세요</pre>
-        <pre>상품명</pre>
-        <input name="title">
-        <pre>가격</pre>
-        <input name="price">
+    <div th:if="${param.error}">
+        <h4>ID나 비번 틀림 ㅋ</h4>
+    </div>
+    <form action="/api/login" method="POST">
+        <pre>로그인</pre>
+        <pre>ID</pre>
+        <input name="username">
+        <pre>Password</pre>
+        <input name="password" type="password">
         <button type="submit">전송</button>
     </form>
 </body>

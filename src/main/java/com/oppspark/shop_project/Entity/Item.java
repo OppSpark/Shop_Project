@@ -1,4 +1,4 @@
-package com.oppspark.shop_porject.Entity;
+package com.oppspark.shop_project.Entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.oppspark.shop_porject;
+package com.oppspark.shop_project;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

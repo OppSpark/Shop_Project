@@ -1,7 +1,6 @@
-package com.oppspark.shop_porject.Controller;
+package com.oppspark.shop_project.Controller;
 
-import com.oppspark.shop_porject.Repository.MemberRepository;
-import com.oppspark.shop_porject.Service.RegisterService;
+import com.oppspark.shop_project.Service.RegisterService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

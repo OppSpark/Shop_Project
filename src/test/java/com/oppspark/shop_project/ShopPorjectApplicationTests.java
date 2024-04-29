@@ -1,4 +1,4 @@
-package com.oppspark.shop_porject;
+package com.oppspark.shop_project;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
